@@ -40,6 +40,8 @@ docker network create --driver bridge minha-bridge
 
 //Comando para criar um container do banco e conectar ele na minha rede
 docker run -d --network minha-bridge --name db_farmacia -e MYSQL_ROOT_PASSWORD='256231' -e MYSQL_DATABASE=dbfarmacia -p 3307:3306 mysql:8.0.33
+//Comando para criar a aplicação para comunicar com o container do banco
+ docker run -d --network minha-bridge --name farmacia -p 8080:8080 -e MYSQL_HOST=db_farmacia erivan41/app-farma:1.0
 
 //Comandos para colocar a aplicação e o banco na mesma rede
 
