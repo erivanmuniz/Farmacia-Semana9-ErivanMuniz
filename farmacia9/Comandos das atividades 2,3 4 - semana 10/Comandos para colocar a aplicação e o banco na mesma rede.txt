@@ -1,0 +1,2 @@
+docker network connect minha-bridge db_farmacia
+docker network connect minha-bridge farmacia_api

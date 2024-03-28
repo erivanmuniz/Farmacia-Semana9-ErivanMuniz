@@ -1,0 +1,7 @@
+FROM openjdk:17-jdk
+WORKDIR /app-jdk
+COPY target/api-0.0.1-SNAPSHOT.jar .
+ARG PORT_BUILD=8080
+ENV PORT=$PORT_BUILD
+EXPOSE $PORT_BUILD
+CMD java -jar api-0.0.1-SNAPSHOT.jar

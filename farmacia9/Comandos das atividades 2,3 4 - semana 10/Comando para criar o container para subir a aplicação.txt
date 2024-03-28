@@ -1,0 +1,25 @@
+FROM openjdk:17-jdk
+WORKDIR /app-jdk
+COPY target/api-0.0.1-SNAPSHOT.jar .
+ARG PORT_BUILD=8080
+ENV PORT=$PORT_BUILD
+EXPOSE $PORT_BUILD
+CMD java -jar api-0.0.1-SNAPSHOT.jar
+
+
+//Comando para executar o arquivo acima e criar a imagem da aplicação
+build -t erivanmuniz/app-farma:1.0 . 
+
+//Subindo a aplicação para o docker hub
+//Fazer login no seu perfil do docker
+docker login -u seu_usuario
+coloque sua senha e após isso, uma mensagem de login bem sucedido aparecerá
+
+docker tag erivanmuniz/app-farma:1.0 seu_usuario/app-farma:1.0
+sua imagem vai aparecer assim: 
+seu_usuario/app-farma:1.0
+
+comando para fazer o push 
+docker push seu_usuario/app-farma:1.0
+
+sua aplicação estará no docker hub

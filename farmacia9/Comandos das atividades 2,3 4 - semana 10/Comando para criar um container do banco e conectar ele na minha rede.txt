@@ -1,0 +1,1 @@
+docker run -d --network minha-bridge --name db_farmacia -e MYSQL_ROOT_PASSWORD='256231' -e MYSQL_DATABASE=dbfarmacia -p 3307:3306 mysql:8.0.33
