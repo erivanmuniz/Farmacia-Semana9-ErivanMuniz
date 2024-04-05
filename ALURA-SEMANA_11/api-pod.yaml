@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: apispring
+  labels:
+    app: api-pod
+spec:
+  containers:
+    - name: apispring
+      image: erivan41/app-farma:1.0
+      ports: 
+        - containerPort: 8080
+      env:
+        - name: MYSQL_HOST
+          value: "svc-bd"
+        - name: MYSQL_DATABASE
+          value: "dbfarmacia"
+
